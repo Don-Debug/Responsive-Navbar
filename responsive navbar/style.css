@@ -1,0 +1,104 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html {
+        user-select: none;
+    }
+    
+    nav {
+        display: flex;
+        position: sticky;
+        top: 0%;
+        justify-content: space-between;
+        padding: 20px 70px;
+        z-index: 1000;
+        background-color: #000;
+        transition: all .6s ease-in-out;
+    }
+    
+    #close {
+        color: #fff;
+        display: none;
+    }
+    
+    .logo {
+        color: #fff;
+    }
+    
+    .list {
+        display: flex;
+        align-items: center;
+    }
+    
+    .list-items {
+        padding-right: 25px;
+        list-style-type: none;
+        margin-right: 50px;
+    }
+    
+    .navlinks {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+    }
+    
+    #mobile-menu {
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+        display: none;
+    }
+    
+    @media screen and (max-width: 800px) {
+        #mobile-menu {
+            display: block;
+            cursor: pointer;
+        }
+        #close {
+            display: block;
+            position: absolute;
+            top: 5%;
+            right: 20%;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .logo {
+            width: 150px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            top: 0%;
+            z-index: 1000000;
+            background-color: #000;
+            width: 100%;
+            padding: 25px;
+        }
+        .list {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 20px 30px;
+            background-color: black;
+            width: 50%;
+            height: 100%;
+            z-index: 10000;
+            transform: translateX(100%);
+            transition: transform .5s ease-in-out;
+        }
+        .open-nav {
+            transform: translateX(0);
+        }
+        .list-items {
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .navlinks {
+            color: #fff;
+        }
+    }
